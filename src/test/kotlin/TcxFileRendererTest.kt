@@ -2,13 +2,15 @@ import org.junit.Assert
 import org.junit.Test
 import ua.com.radiokot.arduino2tcx.TcxFileRenderer
 import ua.com.radiokot.arduino2tcx.model.RecordPoint
-import java.io.BufferedOutputStream
 import java.io.BufferedWriter
-import java.io.OutputStream
 import java.io.StringWriter
 import java.util.*
 
 class TcxFileRendererTest {
+    init {
+        Locale.setDefault(Locale.ENGLISH)
+    }
+
     @Test
     fun renderSimple() {
         var startTime = 100500
@@ -57,29 +59,29 @@ class TcxFileRendererTest {
                                 <Track>
                                    <Trackpoint>
                                        <Time>1970-01-02T05:55:01.000Z</Time>
-                                       <DistanceMeters>3,17</DistanceMeters>
+                                       <DistanceMeters>3.17</DistanceMeters>
                                    </Trackpoint>
                                    <Extensions>
                                        <TPX xmlns="https://www8.garmin.com/xmlschemas/ActivityExtensionv2.xsd">
-                                           <Speed>3,29</Speed>
+                                           <Speed>3.29</Speed>
                                        </TPX>
                                    </Extensions>
                                    <Trackpoint>
                                        <Time>1970-01-02T05:55:02.000Z</Time>
-                                       <DistanceMeters>8,98</DistanceMeters>
+                                       <DistanceMeters>8.98</DistanceMeters>
                                    </Trackpoint>
                                    <Extensions>
                                        <TPX xmlns="https://www8.garmin.com/xmlschemas/ActivityExtensionv2.xsd">
-                                           <Speed>5,77</Speed>
+                                           <Speed>5.77</Speed>
                                        </TPX>
                                    </Extensions>
                                    <Trackpoint>
                                        <Time>1970-01-02T05:55:03.000Z</Time>
-                                       <DistanceMeters>16,63</DistanceMeters>
+                                       <DistanceMeters>16.63</DistanceMeters>
                                    </Trackpoint>
                                    <Extensions>
                                        <TPX xmlns="https://www8.garmin.com/xmlschemas/ActivityExtensionv2.xsd">
-                                           <Speed>7,49</Speed>
+                                           <Speed>7.49</Speed>
                                        </TPX>
                                    </Extensions>
                                 </Track>

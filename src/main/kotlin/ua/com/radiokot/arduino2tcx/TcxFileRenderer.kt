@@ -4,6 +4,7 @@ import ua.com.radiokot.arduino2tcx.model.RecordPoint
 import java.io.BufferedWriter
 import java.io.OutputStream
 import java.text.SimpleDateFormat
+import java.util.*
 
 class TcxFileRenderer {
     fun render(
@@ -58,11 +59,11 @@ class TcxFileRenderer {
                 writer.write("""
                 |                   <Trackpoint>
                 |                       <Time>${DATE_FORMAT.format(point.localTime)}</Time>
-                |                       <DistanceMeters>${"%.2f".format(distanceMeters)}</DistanceMeters>
+                |                       <DistanceMeters>${Formatter(Locale.ENGLISH).format("%.2f", distanceMeters)}</DistanceMeters>
                 |                   </Trackpoint>
                 |                   <Extensions>
                 |                       <TPX xmlns="https://www8.garmin.com/xmlschemas/ActivityExtensionv2.xsd">
-                |                           <Speed>${"%.2f".format(point.speedMph.toDouble() / 3600)}</Speed>
+                |                           <Speed>${Formatter(Locale.ENGLISH).format("%.2f", point.speedMph.toDouble() / 3600)}</Speed>
                 |                       </TPX>
                 |                   </Extensions>
                 |
